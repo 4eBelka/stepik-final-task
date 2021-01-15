@@ -1,6 +1,7 @@
 # stepik-final-task
 Финальное задание по курсу https://stepik.org/course/575/syllabus
 
+
 **Команды для запуска:**
 pytest -v --tb=line --language=en -m need_review test_product_page.py
 
@@ -9,6 +10,7 @@ pytest -v --tb=line --language=en --browser_name=firefox -m need_review test_pro
 pytest -rx -v --tb=line -m need_review test_product_page.py - запуск с сообщениями xfail
 
 pytest -v --tb=line test_main_page.py - запуск test_main_page.py
+
 
 **Дополнительно:**
 add_product_to_basket и add_product_to_basket_promo сделаны специально, чтобы при вызове не писать по 4 строки (5)
