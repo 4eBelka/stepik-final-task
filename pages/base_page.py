@@ -4,7 +4,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
-
+import time
 import math
 
 class BasePage():
@@ -40,16 +40,15 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
-    
-#элемент не появляется на странице в течение заданного времени    
+        time.sleep(2) #Добавлено для отработки тестов в браузере firefox
+      
     def is_not_element_present(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
         except TimeoutException:
             return True
         return False
-
-#Ожидаем, что элемент исчезнет         
+     
     def is_disappeared(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout, 1, TimeoutException).\
