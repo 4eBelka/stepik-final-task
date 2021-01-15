@@ -14,6 +14,7 @@ pytest -v --tb=line test_main_page.py - запуск test_main_page.py
 
 
 **Дополнительно:**
+Параметризация  у test_guest_can_add_product_to_basket не удалялась, поскольку не было такой задачи.
 
 add_product_to_basket и add_product_to_basket_promo сделаны специально, чтобы при вызове не писать по 4 строки (5)
 
